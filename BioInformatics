@@ -1,1 +1,24 @@
-print "Python"
+seq = "GAACCTTATTCTTACTTTCTTCATCTTACATCCTCAGTCTCAAGTCTTTAATCTTATCTT"
+
+
+T = 0
+C = 0
+A = 0
+G = 0
+
+for a in range(len(seq)):
+   if ("T" == seq[a]):
+      T = T + 1
+   elif ("C" == seq[a]):
+      C = C + 1
+   elif ("A" == seq[a]):
+      A = A + 1
+   else:
+      G = G + 1
+
+
+print "In the sequence, there are", T, "T's", C, "C's", A, "A's", G, "G's"
+
+
+
+
