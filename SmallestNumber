@@ -1,0 +1,10 @@
+x = [-54, 9, -57, 5563, -9, 67]
+
+answer = x[1]
+
+for y in range(len(x)):
+   if (answer > x[y]):
+      answer = x[y]
+
+print (answer)
+
