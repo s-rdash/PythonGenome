@@ -1,0 +1,14 @@
+N = 771
+
+answer = True
+
+for x in range(2, (N/2)+1):
+   rem = N % x
+   if (rem == 0):
+      answer = False
+
+if (answer == True):
+   print "It is prime number."
+else:
+   print "It is not a prime number."
+
