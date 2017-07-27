@@ -1,4 +1,10 @@
-N = 3
+#N = 3
+
+N = raw_input("Give me an integer: ")
+
+#N = raw_input()
+
+N = int(N)
 
 sum = 0
 
