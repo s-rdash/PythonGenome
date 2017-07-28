@@ -1,35 +1,19 @@
 s = {"TTT":"F", "TTC": "F", "TTA":"L", "TTG":"L", "CTT":"L", "CTC":"L", "CTA":"L", "CTG":"L", "ATT":"I", "ATC":"I", "ATA":"I", "ATG":"M", "GTT":"V", "GTC":"V", "GTA":"V", "GTG":"V", "TCT":"S", "TCC":"S", "TCA":"S", "TCG":"S", "CCT":"P", "CCC":"P", "CCA":"P", "CCG":"P", "ACT":"T", "ACC":"T", "ACA":"T", "ACG":"T", "GCT":"A", "GCC":"A", "GCA":"A", "GCG":"A", "TAT":"Y", "TAC":"Y", "CAT":"H", "CAC":"H", "CAA":"Q", "CAG":"Q", "AAT":"N", "AAC":"N", "AAA":"K", "AAG":"K", "GAT":"D", "GAC":"D", "GAA":"E", "GAG":"E", "TGT":"C", "TGC":"C", "TGG":"W", "CGT":"R", "CGC":"R", "CGA":"R", "CGG":"R", "AGT":"S", "AGC":"S", "AGA":"R", "AGG":"R", "GGT":"G", "GGC":"G", "GGA":"G", "GGG":"G", "TAA":"   ", "TAG":"   ", "TGA":"   "}
 
-import random
-
-n = ""
+f=open("/share/data/ecoli-seq.txt")
+genome=f.readline()
+genome = genome.strip()
 
 length = []
 
 protein = ""
 
-for i in range(5001):
+n = ""
 
-   x = random.uniform(0,1)
-
-   if (x >= 0 and x < 0.24):
-
-      n = n + "C"
-
-   elif (x >= 0.24 and x < 0.48):
-
-      n = n + "T"
-
-   elif (x >= 0.48 and x < 0.74):
-
-      n = n + "A"
-
-   else:
-
-      n = n + "T"
-
-for x in range(0, len(n),3):
-   protein += (s[n[x:x+3]])
+for x in range(0, len(genome),3):
+   protein += (s[genome[x:x+3]])
+   if (len(protein)%3 != 0):
+      break
 
 sequence = protein.split("   ")
 
@@ -41,9 +25,11 @@ b = length[0]
 
 for t in range(len(length)):
    if (b < length[t]):
-      genome = length[t]
+      n = length[t]
 
-c = length.index(genome)
+c = length.index(n)
 
 print (sequence[c])
 print (genome)
+
+
