@@ -41,6 +41,7 @@ b = length[0]
 
 for t in range(len(length)):
    if (b < length[t]):
+      b = length[t]
       genome = length[t]
 
 c = length.index(genome)
