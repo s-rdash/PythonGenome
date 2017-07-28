@@ -1,0 +1,20 @@
+N = raw_input("Give me an integer: ")
+
+#N = raw_input()
+
+i = float(N)
+
+import math
+
+if (int(math.sqrt(i)) > float(math.sqrt(i))):
+  
+   print i, "cannot be squared to a whole number"
+
+elif (int(math.sqrt(i)) < float(math.sqrt(i))): 
+
+   print i, "cannot be squared to a whole number"
+
+else:
+  
+   i = int(i)
+   print math.sqrt(i)
